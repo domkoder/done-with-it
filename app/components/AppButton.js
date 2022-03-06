@@ -1,15 +1,22 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import colors from '../config/colors'
 
 const AppButton = ({ title, color = 'primary' }) => {
 	return (
 		<TouchableOpacity
-			style={{ ...styles.button, backgroundColor: colors[color] }}
+			style={[styles.button, { backgroundColor: colors[color] }]}
 		>
 			<Text style={styles.text}>{title}</Text>
 		</TouchableOpacity>
 	)
+}
+
+AppButton.propTypes = {
+	title: PropTypes.string.isRequired,
+	color: PropTypes.string.isRequired,
 }
 
 export default AppButton
