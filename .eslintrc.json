@@ -1,0 +1,12 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    "no-unused-vars": [1, {"vars": "all", "args": "after-used"}],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  }
+  // "env": {
+  //   "browser": true,
+  //   "es6": true
+  // }
+}
