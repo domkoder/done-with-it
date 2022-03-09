@@ -10,8 +10,11 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo-google-fonts/inter": "^0.2.2",
     "@react-native-community/hooks": "^2.8.1",
     "expo": "~44.0.0",
+    "expo-constants": "^13.0.2",
+    "expo-font": "~10.0.4",
     "expo-status-bar": "~1.2.0",
     "prop-types": "^15.8.1",
     "react": "17.0.1",

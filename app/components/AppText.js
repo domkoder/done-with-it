@@ -8,7 +8,7 @@ const AppText = ({ children, style }) => {
 
 AppText.propTypes = {
 	children: PropTypes.string.isRequired,
-	style: PropTypes.object.isRequired,
+	style: PropTypes.object,
 }
 
 export default AppText
