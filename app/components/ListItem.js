@@ -10,6 +10,7 @@ const ListItem = ({
 	title,
 	description,
 	image,
+	iconComponent,
 	onPress,
 	renderRightActions,
 }) => {
@@ -17,10 +18,13 @@ const ListItem = ({
 		<Swipeable renderRightActions={renderRightActions}>
 			<TouchableHighlight underlayColor={colors.light} onPress={onPress}>
 				<View style={styles.container}>
-					<Image style={styles.image} source={image} />
+					{iconComponent}
+					{image && <Image style={styles.image} source={image} />}
 					<View style={styles.detailContainer}>
 						<AppText style={styles.title}>{title}</AppText>
-						<AppText style={styles.description}>{description}</AppText>
+						{description && (
+							<AppText style={styles.description}>{description}</AppText>
+						)}
 					</View>
 				</View>
 			</TouchableHighlight>
@@ -29,11 +33,12 @@ const ListItem = ({
 }
 
 ListItem.propTypes = {
-	title: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
-	image: PropTypes.number.isRequired,
-	onPress: PropTypes.func.isRequired,
-	renderRightActions: PropTypes.func.isRequired,
+	title: PropTypes.string,
+	description: PropTypes.string,
+	image: PropTypes.number,
+	onPress: PropTypes.func,
+	renderRightActions: PropTypes.func,
+	iconComponent: PropTypes.object,
 }
 
 export default ListItem
@@ -43,14 +48,17 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		padding: 15,
+		backgroundColor: colors.white,
 	},
 	image: {
 		height: 60,
 		width: 60,
 		borderRadius: 35,
-		marginRight: 10,
 	},
-	detailContainer: {},
+	detailContainer: {
+		marginLeft: 10,
+		justifyContent: 'center',
+	},
 	title: {
 		fontWeight: '500',
 	},
